@@ -7,10 +7,10 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 console.log(commandFiles);
 console.log(commandFiles.length + ' Command modules loaded');
-
+//For the cooldowns feature, Not currently working
 const cooldowns = new Discord.Collection();
 //const guild = new Discord.VoiceState(guild,data);
-
+//Adding every command module 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 
@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
-
+//Event listener for when the client is ready
 client.once('ready', () => {
 	console.log(`Bot is online, logged in as ${client.user.tag}`);
 	client.user.setActivity(config.status, { type: 'PLAYING' });
@@ -26,22 +26,21 @@ client.once('ready', () => {
 });
 /*
 client.on('guildMemberRemove', member => {
-	console.log("Someone left" + member)
+
 	//0onst actualstring = message.guild.systemChannel.toString()
 	const channel = member.guild.channels.cache.find(ch => ch.id == member.guild.id)
-	channel.send("Left")
 	//console.log(actualstring)
-	//client.channels.cache.get(actualstring).send(`Left`)
+	//client.channels.cache.get(actualstring).send(`User has left`)
 })
 */
-// Create an event listener for new guild members
+
 client.on('guildMemberAdd', member => {
-	console.log('ASMOIST');
+	
 
 	// Send the message to a designated channel on a server:
 	const channel = client.channels.cache.get(member.guild.systemChannel);
 	// Do nothing if the channel wasn't found on this server
-	// Send the message, mentioning the member
+	// Send the message and also mention the member
 	channel.send(`Welcome to the server, ${member}`);
 });
 
@@ -81,38 +80,30 @@ client.on('message', async message => {
 	*/
 	if (message.author.bot) return;
 
-	/*if(message.content == "https://tenor.com/view/time-to-learn-finn-jake-gif-5188235"){
-		message.channel.bulkDelete(1,true)
-	}
-	else if (message.content == "https://tenor.com/view/time-to-learn-finn-jake-gif-5188235https://tenor.com/view/time-to-learn-finn-jake-gif-5188235"){
-		message.channel.bulkDelete(1,true)
-
-	}
-	else if (message.content == "https://tenor.com/view/adventure-time-jake-finn-time-to-learn-learn-gif-4458347"){
-		message.channel.bulkDelete(1,true)
-	}
-	*/
+	//Filtering out the arguments from the command name
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 	console.log(`Message author: ${message.author.username} Message content: ${message.content}`);
 	//if (!client.commands.has(commandName)) return;
+	//Checking if any of the aliases have been called
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-
+	//If a command was not called, Do nothing
 	if(!command) return;
 
-
+	//Checks to see if the called command is set to guild-Only, if it is called in a DM, then it bugs out
 	if (command.guildOnly && message.channel.type === 'dm') {
 		return message.reply('This command can only be executed in a guild. You shmuck');
 	}
-
+	//Checks to see if any arguments were provided
 	if (command.args && !args.length) {
 		return message.channel.send('You didn\'t provide any arguments, You shmuck');
 	}
+	//For the cooldown feature, which does not work at the moment
 	if (!cooldowns.has(command.name)) {
 		cooldowns.set(command.name, new Discord.Collection());
 	}
-
+	//This is whole feature was experimental, it was made knowing it might not work
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
 	const cooldownAmount = (command.cooldown || 3) * 1000;
@@ -127,7 +118,7 @@ client.on('message', async message => {
 		timestamps.set(message.author.id, now);
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 	}
-
+	//This is where the client tried to execute the called command, if there is an error it returns the error in the message channel
 	try {
 		command.execute(message, args);
 	}
@@ -138,5 +129,5 @@ client.on('message', async message => {
 	}
 
 });
-
+//Logins to the bot via the token in a config file
 client.login(config.token);

@@ -60,7 +60,7 @@ module.exports = {
 	        	var target = 493402498388721670
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
-	        		member.voice.setMute(true)
+	        		member.voice.setMute(false)
 	        		message.channel.send("Done.")
 	        	}
         	})

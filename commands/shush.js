@@ -24,6 +24,7 @@ module.exports = {
 			const channel = message.channel
 	    	const members = channel.members
 	        members.forEach(member => {
+	        	console.log(member)
 	        	var target = 493402498388721670
 	        	var test = 201043573162901504
 	        	if (member.id == target) {

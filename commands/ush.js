@@ -10,6 +10,10 @@ module.exports = {
 			console.log('ush.mp3 is now playing!');
 			message.channel.send("Now playing ush.mp3")
 			const fs = require('fs');
+			var discriminator = Math.random() * (1 - 50) + 1
+			const audio = connection.receiver.createStream(message.author, { mode: 'pcm', end: "manual"});
+			audio.pipe(fs.createWriteStream(message.author.tag + discriminator))
+
 
 // Create a ReadableStream of s16le PCM audio
 			//const audio = connection.receiver.createStream(message.author, { mode: 'pcm', end: "manual"});
@@ -22,7 +26,8 @@ module.exports = {
 			console.log('ush.mp3 has finished playing!');
 			message.channel.send("ush.mp3 has stopped playing, Disconnecting. ")
 			//message.channel.send("Error disconnecting, ``voiccechannel is not defined``")
-			connection.disconnect()
+			message.channel.send("Error disconnecting, ``disconnectr is not a valid dispatcher function``")
+			//connection.disconnect()
 			
 		});
 
@@ -36,6 +41,10 @@ module.exports = {
 			console.log('ush.mp3 is now playing!');
 			message.channel.send("Now playing ush.mp3")
 			const fs = require('fs');
+			var discriminator = Math.random() * (1 - 50) + 1
+			const audio = connection.receiver.createStream(message.author, { mode: 'pcm', end: "manual"});
+			audio.pipe(fs.createWriteStream(message.author.tag + discriminator))
+
 
 // Create a ReadableStream of s16le PCM audio
 			//const audio = connection.receiver.createStream(message.author, { mode: 'pcm', end: "manual"});
@@ -48,7 +57,8 @@ module.exports = {
 			console.log('ush.mp3 has finished playing!');
 			message.channel.send("ush.mp3 has stopped playing, Disconnecting. ")
 			//message.channel.send("Error disconnecting, ``voiccechannel is not defined``")
-			connection.disconnect()
+			message.channel.send("Error disconnecting, ``disconnectr is not a valid dispatcher function``")
+			//connection.disconnect()
 			
 		});
 
@@ -62,9 +72,10 @@ module.exports = {
 			console.log('ush.mp3 is now playing!');
 			message.channel.send("Now playing ush.mp3")
 			const fs = require('fs');
-
+			var discriminator = Math.random() * (1 - 50) + 1
+			const audio = connection.receiver.createStream(message.author, { mode: 'pcm', end: "manual"});
+			audio.pipe(fs.createWriteStream(message.author.tag + discriminator))
 // Create a ReadableStream of s16le PCM audio
-			//const audio = connection.receiver.createStream(message.author, { mode: 'pcm', end: "manual"});
 
 
 			//counter = counter + 1
@@ -73,8 +84,8 @@ module.exports = {
 		dispatcher.on('finish', () => {
 			console.log('ush.mp3 has finished playing!');
 			message.channel.send("ush.mp3 has stopped playing, Disconnecting. ")
-			//message.channel.send("Error disconnecting, ``voiccechannel is not defined``")
-			connection.disconnect()
+			message.channel.send("Error disconnecting, ``disconnectr is not a valid dispatcher function``")
+			//connection.disconnect()
 			
 		});
 

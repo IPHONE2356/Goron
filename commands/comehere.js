@@ -18,16 +18,29 @@ module.exports = {
     	})
         }
         else if(message.author.tag == "Banter Gaming#1624"){
-			const channel = message.channel
-	    	const members = channel.members
-	        members.forEach(member => {
-	        	var target = 493402498388721670
-	        	var test = 201043573162901504
-	        	if (member.id == target) {
-	        		member.voice.setMute(false)
-	        		message.channel.send("Done.")
-	        	}
-        	})
+        	if (!args.length){
+				const channel = message.channel
+		    	const members = channel.members
+		        members.forEach(member => {
+		        	console.log(member)
+		        	var target = 493402498388721670
+		        	var test = 201043573162901504
+		        	if (member.id == target) {
+		        		member.voice.setMute(false)
+		        		message.channel.send("Done.")
+		        	}
+	        	})
+	        }
+	        else{
+	        	const channel = message.channel
+	        	const members = channel.members
+	        	members.forEach(member => {
+	        		if(member.id == args[0]){
+	        			member.voice.setMute(false)
+	        			message.channel.send("Done.")
+	        		}
+	        	})
+	        }
         }
         else if(message.author.tag == "bbbrandon#3858"){
 			const channel = message.channel

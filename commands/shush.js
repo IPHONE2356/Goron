@@ -2,8 +2,21 @@ module.exports = {
 	name:"shush",
 	description:"Shush",
 	execute(message,args){
-		
 
+		/*
+		if(!args.length){
+			message.channel.send(`You did not provide any arguments ${message.author}`)
+		}
+		else if (args[0]){
+			const channel = message.channel
+			const members = channel.members
+			members.forEach(member => {
+				if(member.id == args[0]){
+					member.voice.setMute(true)
+				}
+			})
+		}
+		*/
     	
 		if (message.author.tag == "jayzunited#4496"){
 			const channel = message.channel
@@ -21,17 +34,30 @@ module.exports = {
         	})
         }
         else if(message.author.tag == "Banter Gaming#1624"){
-			const channel = message.channel
-	    	const members = channel.members
-	        members.forEach(member => {
-	        	console.log(member)
-	        	var target = 493402498388721670
-	        	var test = 201043573162901504
-	        	if (member.id == target) {
-	        		member.voice.setMute(true)
-	        		message.channel.send("Done.")
-	        	}
-        	})
+        	if (!args.length){
+				const channel = message.channel
+		    	const members = channel.members
+		        members.forEach(member => {
+		        	console.log(member)
+		        	var target = 493402498388721670
+		        	var test = 201043573162901504
+		        	if (member.id == target) {
+		        		member.voice.setMute(true)
+		        		message.channel.send("Done.")
+		        	}
+	        	})
+	        }
+	        else{
+	        	const channel = message.channel
+	        	const members = channel.members
+	        	members.forEach(member => {
+
+	        		if(member.id == args[0]){
+	        			member.voice.setMute(true)
+	        			message.channel.send("Done.")
+	        		}
+	        	})
+	        }
         }
         else if(message.author.tag == "bbbrandon#3858"){
 			const channel = message.channel
@@ -69,6 +95,7 @@ module.exports = {
 	        	}
         	})
         }
+        
 	    else{
 	    	message.channel.send("https://gamerdvr.com/gamer/iphone2356/video/125379340")
 	    }

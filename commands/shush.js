@@ -35,18 +35,23 @@ module.exports = {
         }
         else if(message.author.tag == "Banter Gaming#1624"){
         	if (!args.length){
-				const channel = message.channel
-		    	const members = channel.members
-		        members.forEach(member => {
-		        	console.log(member)
-		        	var target = 493402498388721670
-		        	var test = 201043573162901504
-		        	if (member.id == target) {
-		        		member.voice.setMute(true)
-		        		message.channel.send("Done.")
-		        	}
-	        	})
-	        }
+        		try{
+					const channel = message.channel
+			    	const members = channel.members
+			        members.forEach(member => {
+			        	console.log(member)
+			        	var target = 493402498388721670
+			        	var test = 201043573162901504
+			        	if (member.id == target) {
+			        		member.voice.setMute(true)
+			        		message.channel.send("Done.")
+			        	}
+		        	})
+		        } catch (error){
+		    	console.error(error)
+		    	message.channel.send(`There was an error executing that commmand, You shmuck \n ${error}`)
+		    	}
+		    } 
 	        else{
 	        	const channel = message.channel
 	        	const members = channel.members

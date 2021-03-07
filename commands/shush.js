@@ -18,21 +18,41 @@ module.exports = {
 		}
 		*/
     	
-		if (message.author.tag == "jayzunited#4496"){
-			const channel = message.channel
-	    	const members = channel.members
-	        members.forEach(member => {
+        if(message.author.id == "330411095959273482"){
+        	if (!args.length){
+        		try{
+					const channel = message.channel
+			    	const members = channel.members
+			        members.forEach(member => {
+			        	console.log(member)
+			        	var target = 493402498388721670
+			        	var test = 201043573162901504
+			        	if (member.id == target) {
+			        		member.voice.setMute(true)
+			        		message.channel.send("Muted")
+			        	}
+		        	})
+		        } catch (error){
+		    	console.error(error)
+		    	message.channel.send(`There was an error executing that commmand, You shmuck \n ${error}`)
+		    	}
+		    } 
+	        else{
+	        	const channel = message.channel
+	        	const members = channel.members
+	        	members.forEach(member => {
+	        		if (args[0] == 201043573162901504){
+	        			message.channel.send("You are not smart")
+	        		}
 
-	        	var target = 493402498388721670
-	        	var test = 201043573162901504
-	        	if (member.id == target) {
-	        		member.voice.setMute(true)
-	        		message.channel.send("Done.")
-	        	}
-        //member.voice.setMute(true)
-        
-        	})
+	        		else if(member.id == args[0]){
+	        			member.voice.setMute(true)
+	        			message.channel.send("Muted")
+	        		}
+	        	})
+	        }
         }
+
         else if(message.author.tag == "Banter Gaming#1624"){
         	if (!args.length){
         		try{
@@ -44,7 +64,7 @@ module.exports = {
 			        	var test = 201043573162901504
 			        	if (member.id == target) {
 			        		member.voice.setMute(true)
-			        		message.channel.send("Done.")
+			        		message.channel.send("Muted")
 			        	}
 		        	})
 		        } catch (error){
@@ -59,7 +79,7 @@ module.exports = {
 
 	        		if(member.id == args[0]){
 	        			member.voice.setMute(true)
-	        			message.channel.send("Done.")
+	        			message.channel.send("Muted")
 	        		}
 	        	})
 	        }
@@ -72,10 +92,11 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(true)
-	        		message.channel.send("Done.")
+	        		message.channel.send("Muted")
 	        	}
         	})
         }
+        /*
         else if (message.author.tag == "JustNotVeryGood#4626"){
 			const channel = message.channel
 	    	const members = channel.members
@@ -84,7 +105,7 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(true)
-	        		message.channel.send("Done.")
+	        		message.channel.send("Muted")
 	        	}
         	})
         }
@@ -96,10 +117,11 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(true)
-	        		message.channel.send("Done.")
+	        		message.channel.send("Muted")
 	        	}
         	})
         }
+        */
         
 	    else{
 	    	message.channel.send("https://gamerdvr.com/gamer/iphone2356/video/125379340")

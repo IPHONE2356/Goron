@@ -23,14 +23,18 @@ module.exports = {
 		    	}
 		    } 
 	        else{
+	        	if (args[0] == 201043573162901504){
+	        		message.channel.send("You are not smart")
+	        	}
+	        	else if (args[0] == 330411095959273482){
+	        		message.channel.send("You are not smart")
+	        	}
 	        	const channel = message.channel
 	        	const members = channel.members
 	        	members.forEach(member => {
-	        		if (args[0] == 201043573162901504){
-	        			message.channel.send("You are not smart")
-	        		}
 
-	        		else if(member.id == args[0]){
+
+	        		if(member.id == args[0]){
 	        			member.voice.setMute(false)
 	        			message.channel.send("Unmuted")
 	        		}

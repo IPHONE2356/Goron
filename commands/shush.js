@@ -38,18 +38,20 @@ module.exports = {
 		    	}
 		    } 
 	        else{
-	        	const channel = message.channel
-	        	const members = channel.members
-	        	members.forEach(member => {
-	        		if (args[0] == 201043573162901504){
-	        			message.channel.send("You are not smart")
-	        		}
+	        	if (args[0] == 201043573162901504){
+	        		message.channel.send("You are not smart")
+	        	}
+	        	else{
+		        	const channel = message.channel
+		        	const members = channel.members
+		        	members.forEach(member => {
 
-	        		else if(member.id == args[0]){
-	        			member.voice.setMute(true)
-	        			message.channel.send("Muted")
-	        		}
-	        	})
+		        		if(member.id == args[0]){
+		        			member.voice.setMute(true)
+		        			message.channel.send("Muted")
+		        		}
+		        	})
+		        }
 	        }
         }
 

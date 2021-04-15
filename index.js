@@ -90,6 +90,10 @@ client.on('message', async message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 	console.log(`Message author: ${message.author.username} Message content: ${message.content}`);
+	if(message.attachments.size > 0){
+		var currentattach = message.attachments
+		console.log(currentattach)
+	}
 	//if (!client.commands.has(commandName)) return;
 	//Checking if any of the aliases have been called
 	const command = client.commands.get(commandName)

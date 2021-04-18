@@ -29,16 +29,18 @@ module.exports = {
 	        	else if (args[0] == 330411095959273482){
 	        		message.channel.send("You are not smart")
 	        	}
-	        	const channel = message.channel
-	        	const members = channel.members
-	        	members.forEach(member => {
+		        else{
+		        	const channel = message.channel
+		        	const members = channel.members
+		        	members.forEach(member => {
 
 
-	        		if(member.id == args[0]){
-	        			member.voice.setMute(false)
-	        			message.channel.send("Unmuted")
-	        		}
-	        	})
+		        		if(member.id == args[0]){
+		        			member.voice.setMute(false)
+		        			message.channel.send("Unmuted")
+		        		}
+		        	})
+		        }
 	        }
         }
         else if(message.author.tag == "Banter Gaming#1624"){

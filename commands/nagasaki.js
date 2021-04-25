@@ -25,7 +25,7 @@ module.exports = {
 					console.log("Changing nickanme")
 					member.setNickname("Nuclear Waste")
 					
-					var channel = message.channel
+					/*var channel = message.channel
 					console.log(`Channel: ${channel}`)
 					var channel = channel.toString()
 					var channel = channel.split("#")
@@ -46,6 +46,7 @@ module.exports = {
 							deny: ['SEND_MESSAGES'],
 						},
 					]);
+					*/
 					//channel.updateOverwrite(channel.guild.roles.shush, { "SEND_MESSAGES": false })
 				}
 			})

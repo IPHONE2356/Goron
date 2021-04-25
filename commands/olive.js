@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'olive',
 	description: 'olive',
-	async execute(message, args) {
+	async execute(message, args){
 		var counter = 0
 		const Discord = require('discord.js')
 		if (message.author.id == 493402498388721670){

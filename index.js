@@ -11,6 +11,10 @@ console.log(commandFiles.length + ' Command modules loaded');
 const cooldowns = new Discord.Collection();
 //const guild = new Discord.VoiceState(guild,data);
 //Adding every command module 
+fs.writeFile('aimbotval.txt',"69 \n", (err) => {
+	if (err) throw err;
+})
+
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 
@@ -103,7 +107,7 @@ client.on('message', async message => {
 
 	//Checks to see if the called command is set to guild-Only, if it is called in a DM, then it bugs out
 	if (command.guildOnly && message.channel.type === 'dm') {
-		return message.reply('This command can only be executed in a guild. You shmuck');
+		return message.reply('This command can only be executed in a guild, You shmuck');
 	}
 	//Checks to see if any arguments were provided
 	if (command.args && !args.length) {
@@ -135,7 +139,7 @@ client.on('message', async message => {
 	catch (error) {
 		console.error(error);
 		message.channel.send('There was an error executing that command. You shmuck');
-		message.channel.send('`` " + error +  " ``');
+		message.channel.send("`` " + error +  " ``");
 	}
 
 });

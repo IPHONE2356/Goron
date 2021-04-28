@@ -1,3 +1,8 @@
-module.exports = {
-	
-}
+		var fs = require('fs')
+		var links = fs.readFileSync("aimbotlinks.txt").toString()
+		links = links.split("\n")
+		function randomint(max){
+			return Math.floor(Math.random() * Math.floor(max))
+		}
+		var picker = randomint(links.length)
+		message.channel.send(links[picker])

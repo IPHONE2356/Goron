@@ -2,6 +2,7 @@ module.exports = {
 	name:"wetguy",
 	description:"Undos the tsar bomba",
 	aliases:["untsar","peacetreaty"],
+	guildOnly : true,
 	execute(message,args){
 		if(message.author.tag == "Banter Gaming#1624"){
 			targetid = args[0]

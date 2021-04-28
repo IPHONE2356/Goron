@@ -1,6 +1,7 @@
 module.exports = {
 	name:"shush",
 	description:"Shush",
+	guildOnly : true,
 	execute(message,args){
 
 		/*

@@ -28,7 +28,7 @@ module.exports = {
 				prevpick = parseInt(prevpick)
 				while (prevpick == picker){
 					var picker = randomint(links.length)
-					console.log("Current picked cliped is the same as the previous picked clip, Rerolling...")
+					console.log("Current picked clip is the same as the previous picked clip, Rerolling...")
 				}
 				fs.writeFile('aimbotval.txt',picker.toString() + "\n", (err) => {
 					if (err) throw err;

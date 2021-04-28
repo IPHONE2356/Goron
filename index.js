@@ -38,7 +38,7 @@ client.on('guildMemberRemove', member => {
 })
 */
 
-client.on('guildMemberAdd', member => {
+/*client.on('guildMemberAdd', member => {
 	
 
 	// Send the message to a designated channel on a server:
@@ -47,6 +47,7 @@ client.on('guildMemberAdd', member => {
 	// Send the message and also mention the member
 	channel.send(`Welcome to the server, ${member}`);
 });
+*/
 
 
 client.on('message', async message => {

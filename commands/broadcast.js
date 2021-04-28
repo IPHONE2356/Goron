@@ -1,6 +1,7 @@
 module.exports = {
 	name:"broadcast",
 	description:"Broadcasts a sound file to all voice channels that the bot is in.",
+	guildOnly : true,
 	async execute(message,args){
 		if (message.author.tag == "Banter Gaming#1624"){
 			var connection = await message.member.voice.channel.join()

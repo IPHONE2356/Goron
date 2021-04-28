@@ -11,7 +11,7 @@ module.exports = {
 			else{
 				var counter = 1
 				var output = " "
-				for (i=0; i < args.length; i++) {
+				for (i=0; i < arlen; i++) {
 					output = output + args[i] + " "
 					console.log(`i= ${i}`)
 					console.log(output)

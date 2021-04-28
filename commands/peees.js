@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'peees',
 	description: 'peees',
+	guildOnly : true,
 	async execute(message, args) {
 		const Discord = require('discord.js')
 		var counter = 0

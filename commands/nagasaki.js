@@ -2,6 +2,7 @@ module.exports = {
 	name:"tsar",
 	description:"50 Megatons of TNT",
 	aliases:["tsarbomba","si"],
+	guildOnly : true,
 	execute(message,args){
 		const Discord = require('discord.js');
 		const client = new Discord.Client();

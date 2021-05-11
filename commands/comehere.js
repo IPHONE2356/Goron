@@ -14,7 +14,7 @@ module.exports = {
 			        	var test = 201043573162901504
 			        	if (member.id == target) {
 			        		member.voice.setMute(false)
-			        		message.channel.send("Unmuted")
+			        		message.channel.send(`Unmuted ${member.nickname}`)
 			        	}
 		        	})
 		        } catch (error){
@@ -37,7 +37,7 @@ module.exports = {
 
 		        		if(member.id == args[0]){
 		        			member.voice.setMute(false)
-		        			message.channel.send("Unmuted")
+		        			message.channel.send(`Unmuted ${member.nickname}`)
 		        		}
 		        	})
 		        }
@@ -53,7 +53,7 @@ module.exports = {
 		        	var test = 201043573162901504
 		        	if (member.id == target) {
 		        		member.voice.setMute(false)
-		        		message.channel.send("Unmuted")
+		        		message.channel.send(`Unmuted ${member.nickname}`)
 		        	}
 	        	})
 	        }
@@ -63,7 +63,7 @@ module.exports = {
 	        	members.forEach(member => {
 	        		if(member.id == args[0]){
 	        			member.voice.setMute(false)
-	        			message.channel.send("Unmuted")
+	        			message.channel.send(`Unmuted ${member.nickname}`)
 	        		}
 	        	})
 	        }
@@ -76,7 +76,7 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(false)
-	        		message.channel.send("Unmuted")
+	        		message.channel.send(`Unmuted ${member.nickname}`)
 	        	}
         	})
         }
@@ -109,7 +109,29 @@ module.exports = {
         }
         */
 	    else{
-	    	message.channel.send({files : ["Best_aim_ever.mp4"]})
+	    	if(!args.length){
+	    		message.channel.send({files : ["Best_aim_ever.mp4"]})
+	    	}
+	    	else if(args[0] == "acapella"){
+
+	    		var targetid = 460455100092252170
+	    		var testid = 201043573162901504
+	    		if(message.author.id == targetid){
+	    			message.channel.send("You are not smart")
+	    		}
+	    		else{
+	    			const channel = message.channel
+	    			const members = channel.members
+	    			members.forEach(member => {
+	    				if(member.id == targetid){
+	    					member.voice.setMute(false)
+	    					message.channel.send(`Unmuted ${member.nickname}`)
+	    				}
+
+	    			})
+	    		}
+	    	}
+	    	
 	    }
 		
 		//message.channel.send({files : ["Best_aim_ever.mp4"]})

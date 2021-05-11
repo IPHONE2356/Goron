@@ -30,7 +30,7 @@ module.exports = {
 			        	var test = 201043573162901504
 			        	if (member.id == target) {
 			        		member.voice.setMute(true)
-			        		message.channel.send("Muted")
+			        		message.channel.send(`Muted ${member.nickname}`)
 			        	}
 		        	})
 		        } catch (error){
@@ -40,7 +40,13 @@ module.exports = {
 		    } 
 	        else{
 	        	if (args[0] == 201043573162901504){
-	        		message.channel.send("You are not smart")
+	        		const channel = message.channel
+	        		const members = channel.members
+	        		members.forEach(member => {
+	        			if(member.id == 330411095959273482){
+	        				member.voice.setMute(true)
+	        			}
+	        		})
 	        	}
 	        	else{
 		        	const channel = message.channel
@@ -49,7 +55,7 @@ module.exports = {
 
 		        		if(member.id == args[0]){
 		        			member.voice.setMute(true)
-		        			message.channel.send("Muted")
+		        			message.channel.send(`Muted ${member.nickname}`)
 		        		}
 		        	})
 		        }
@@ -67,7 +73,7 @@ module.exports = {
 			        	var test = 201043573162901504
 			        	if (member.id == target) {
 			        		member.voice.setMute(true)
-			        		message.channel.send("Muted")
+			        		message.channel.send(`Muted ${member.nickname}`)
 			        	}
 		        	})
 		        } catch (error){
@@ -82,7 +88,7 @@ module.exports = {
 
 	        		if(member.id == args[0]){
 	        			member.voice.setMute(true)
-	        			message.channel.send("Muted")
+	        			message.channel.send(`Muted ${member.nickname}`)
 	        		}
 	        	})
 	        }
@@ -95,7 +101,7 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(true)
-	        		message.channel.send("Muted")
+	        		message.channel.send(`Muted ${member.nickname}`)
 	        	}
         	})
         }
@@ -108,7 +114,7 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(true)
-	        		message.channel.send("Muted")
+	        		message.channel.send(`Muted ${member.nickname}`)
 	        	}
         	})
         }
@@ -120,7 +126,7 @@ module.exports = {
 	        	var test = 201043573162901504
 	        	if (member.id == target) {
 	        		member.voice.setMute(true)
-	        		message.channel.send("Muted")
+	        		message.channel.send(`Muted ${member.nickname}`)
 	        	}
         	})
         }
@@ -128,6 +134,7 @@ module.exports = {
         
 	    else{
 	    	message.channel.send("https://gamerdvr.com/gamer/iphone2356/video/125379340")
+	    	
 	    }
 	    
 	    

@@ -3,6 +3,7 @@ module.exports = {
 	description:"Server mutes dylan - Only used for when he is singing",
 	aliases:["silence","peace"],
 	execute(message,args){
+
 		const channel = message.channel
 	    const members = channel.members
         members.forEach(member => {
@@ -11,7 +12,11 @@ module.exports = {
         	if (member.id == target) {
         		member.voice.setMute(true)
         		message.channel.send("Muted")
+
         	}
+            if(message.author.id == target){
+                message.channel.send("Suicide.")
+            }
     	})
 	}
 

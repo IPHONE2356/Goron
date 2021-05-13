@@ -4,7 +4,7 @@ module.exports = {
 	aliases:["silence","peace"],
 	execute(message,args){
 
-		const channel = message.channel
+	    const channel = message.channel
 	    const members = channel.members
         members.forEach(member => {
         	var target = 460455100092252170

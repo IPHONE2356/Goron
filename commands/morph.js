@@ -2,6 +2,11 @@ module.exports = {
   name:"morph",
   description:"morph",
   execute(message,args){
-    message.channel.send({files:["morph.png"]})
+    var images = //Add split by new line function here
+    function randomint(max){
+				return Math.floor(Math.random() * Math.floor(max))
+		}
+		var picker = randomint(images.length)
+    message.channel.send({files:[`${images[picker]}`})
   }
 }

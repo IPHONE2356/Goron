@@ -9,7 +9,6 @@ module.exports = {
 		//const guild = <Guild>;
 		if(message.author.tag == "Banter Gaming#1624"){
 			message.channel.send("User authorized. :white_check_mark:")
-			
 			targetid = args[0]
 			//targetrole = args[1]
 			const channel = message.channel

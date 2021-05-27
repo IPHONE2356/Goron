@@ -12,9 +12,9 @@ module.exports = {
 				console.log(`i= ${i}`)
 				console.log(output)
 			}
-			client.on('ready', () => {
-				client.user.setActivity(output, { type: 'WATCHING' });
-			})
+			
+			client.user.setActivity(output, { type: 'WATCHING' });
+			
 			
 
 		}

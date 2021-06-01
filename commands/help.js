@@ -13,9 +13,11 @@ module.exports = {
 			data.push('Here\'s a list of all my commands:');
 
 
-
+	const fs = require('fs')
+	const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+	data.push(`**There are ${commandFiles.length} command modules loaded**\n`)
 	data.push(commands.map(command => command.name).join(', '));
-	data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command.`);
+	data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command.\n`);
 
 
 	return message.author.send(data, { split: true })

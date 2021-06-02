@@ -2,6 +2,7 @@ module.exports = {
 	name: "beans",
 	aliases: ["carrots","onions","chocolate","broccoli","broadbean","sweetpotato"],
 	description: "Joins the current voice channel you are in and plays the 'What's your favorite vegetable?' video ",
+	usage:"!beans (Have to be in the voice channel)",
 	guildOnly: true,
 	async execute(message,args){
 		var connection = await message.member.voice.channel.join()

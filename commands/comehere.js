@@ -1,6 +1,7 @@
 module.exports = {
 	name:"comehere",
 	description:"Come here",
+	usage:"!comehere [user id] or for !acapella - !comehere acapella",
 	execute(message,args){
 		
         if(message.author.id == "330411095959273482"){

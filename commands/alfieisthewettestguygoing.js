@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'alfieisthewettestguygoing',
-	description:'null',
+	description:'!alfieisthewettestguygoing',
+	usage:"!alfieisthewettestguygoing",
 	execute(message, args) {
 		if(message.author.id == 637640082953601044) {
 			message.channel.send(`**Dear gayfag Alfie,

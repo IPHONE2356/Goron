@@ -1,6 +1,7 @@
 module.exports = {
 	name:"disconnect",
 	description:"Disconnects a user by ID",
+	usage:"!disconnect [user id]",
 	aliases:["dc","getout"],
 	execute(message,args){
 		if(message.author.tag == "Banter Gaming#1624"){

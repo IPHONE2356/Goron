@@ -1,6 +1,7 @@
 module.exports = {
 	name:"acapella",
-	description:"Server mutes dylan",
+	description:"Server mutes dylan, To unmute do !comehere acapella. This can be accessed by anyone",
+	usage:"!acapella",
 	execute(message,args){
 		const channel = message.channel
 		const members = channel.members

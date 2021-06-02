@@ -2,6 +2,7 @@ module.exports = {
 	name: 'alfiestoes',
 	description: 'Sends 3 GIFs to the channel, This command was requested by jiminim',
 	aliases : ["alfie","toes"],
+	usage:"!alfiestoes",
 	cooldown: 20,
 	execute(message, args) {
 		var jaimincounter = 0

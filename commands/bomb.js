@@ -4,6 +4,7 @@ module.exports = {
 	args: true,
 	guildOnly:true,
 	aliases: ["boom","osama","shamima","purge"],
+	usage:"!bomb [No of messages]",
 	execute(message, args) {
 
 		if (message.author.tag == "Banter Gaming#1624"){

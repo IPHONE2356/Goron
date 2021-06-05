@@ -12,10 +12,6 @@ module.exports = {
 				console.log("User authorized")
 				superauth = true
 			}
-			else{
-				console.log("User unathorized")
-				superauth = false
-			}
 		})
 		const channel = message.channel
 		const members = channel.members

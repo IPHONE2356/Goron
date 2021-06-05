@@ -59,7 +59,7 @@ module.exports = {
 					}
 				})
 			}
-			else{
+			else if(superauth == false){
 				const embed = new Discord.MessageEmbed()
 				.setColor("FF0000")
 				.setTitle("Shush")

@@ -1,145 +1,71 @@
 module.exports = {
 	name:"shush",
-	description:"Shush",
-	guildOnly : true,
+	description:"Server mutes alfie, Some people can server mute others using their ID",
 	execute(message,args){
-
-		/*
+		const Discord = require('discord.js');
+		var superauth = false
+		// 201043573162901504
+		var superuser = ["201043573162901504","330411095959273482"]
+		var author = message.author.id
+		superuser.forEach(selectedSu => {
+			if(selectedSu == author){
+				console.log("User authorized")
+				superauth = true
+			}
+			else{
+				console.log("User unathorized")
+				superauth = false
+			}
+		})
+		const channel = message.channel
+		const members = channel.members
 		if(!args.length){
-			message.channel.send(`You did not provide any arguments ${message.author}`)
+			console.log("No arguments provided.")
+			if(superauth == true){
+				console.log("Executing Superuser commnad")
+				members.forEach(member => {
+					var target = 493402498388721670
+					if(member.id == target){
+						member.voice.setMute(true)
+						const embed = new Discord.MessageEmbed()
+						.setColor("00A6FF")
+						.setTitle("Shush")
+						.setDescription(`Muted ${member.nickname}`)
+						message.channel.send(embed)
+
+					}
+				})
+			}
+			else if (superauth == false){
+				console.log("User tried to call command but does not have access to it.")
+				const embed = new Discord.MessageEmbed()
+				.setColor("FF0000")
+				.setTitle("Shush")
+				.setDescription("You do not have access to this command")
+				message.channel.send(embed)
+			}
 		}
-		else if (args[0]){
-			const channel = message.channel
-			const members = channel.members
-			members.forEach(member => {
-				if(member.id == args[0]){
-					member.voice.setMute(true)
-				}
-			})
+		else{
+			if(superauth == true){
+				members.forEach(member => {
+					var target = args[0]
+					if(member.id == target){
+						member.voice.setMute(true)
+						const embed = new Discord.MessageEmbed()
+						.setColor("00A6FF")
+						.setTitle("Shush")
+						.setDescription(`Muted ${member.nickname}`)
+						message.channel.send(embed)
+					}
+				})
+			}
+			else{
+				const embed = new Discord.MessageEmbed()
+				.setColor("FF0000")
+				.setTitle("Shush")
+				.setDescription("You do not have access to this part of this command")
+				message.channel.send(embed)
+			}
 		}
-		*/
-    	
-        if(message.author.id == "330411095959273482"){
-        	if (!args.length){
-        		try{
-					const channel = message.channel
-			    	const members = channel.members
-			        members.forEach(member => {
-			        	console.log(member)
-			        	var target = 493402498388721670
-			        	var test = 201043573162901504
-			        	if (member.id == target) {
-			        		member.voice.setMute(true)
-			        		message.channel.send(`Muted ${member.nickname}`)
-			        	}
-		        	})
-		        } catch (error){
-		    	console.error(error)
-		    	message.channel.send(`There was an error executing that commmand, You shmuck \n ${error}`)
-		    	}
-		    } 
-	        else{
-	        	if (args[0] == 201043573162901504){
-	        		const channel = message.channel
-	        		const members = channel.members
-	        		members.forEach(member => {
-	        			if(member.id == 330411095959273482){
-	        				member.voice.setMute(true)
-	        			}
-	        		})
-	        	}
-	        	else{
-		        	const channel = message.channel
-		        	const members = channel.members
-		        	members.forEach(member => {
-
-		        		if(member.id == args[0]){
-		        			member.voice.setMute(true)
-		        			message.channel.send(`Muted ${member.nickname}`)
-		        		}
-		        	})
-		        }
-	        }
-        }
-
-        else if(message.author.tag == "Banter Gaming#1624"){
-        	if (!args.length){
-        		try{
-					const channel = message.channel
-			    	const members = channel.members
-			        members.forEach(member => {
-			        	console.log(member)
-			        	var target = 493402498388721670
-			        	var test = 201043573162901504
-			        	if (member.id == target) {
-			        		member.voice.setMute(true)
-			        		message.channel.send(`Muted ${member.nickname}`)
-			        	}
-		        	})
-		        } catch (error){
-		    	console.error(error)
-		    	message.channel.send(`There was an error executing that commmand, You shmuck \n ${error}`)
-		    	}
-		    } 
-	        else{
-	        	const channel = message.channel
-	        	const members = channel.members
-	        	members.forEach(member => {
-
-	        		if(member.id == args[0]){
-	        			member.voice.setMute(true)
-	        			message.channel.send(`Muted ${member.nickname}`)
-	        		}
-	        	})
-	        }
-        }
-        else if(message.author.tag == "bbbrandon#3858"){
-			const channel = message.channel
-	    	const members = channel.members
-	        members.forEach(member => {
-	        	var target = 493402498388721670
-	        	var test = 201043573162901504
-	        	if (member.id == target) {
-	        		member.voice.setMute(true)
-	        		message.channel.send(`Muted ${member.nickname}`)
-	        	}
-        	})
-        }
-        /*
-        else if (message.author.tag == "JustNotVeryGood#4626"){
-			const channel = message.channel
-	    	const members = channel.members
-	        members.forEach(member => {
-	        	var target = 493402498388721670
-	        	var test = 201043573162901504
-	        	if (member.id == target) {
-	        		member.voice.setMute(true)
-	        		message.channel.send(`Muted ${member.nickname}`)
-	        	}
-        	})
-        }
-        else if (message.author.tag == "Dyl#0671"){
-			const channel = message.channel
-	    	const members = channel.members
-	        members.forEach(member => {
-	        	var target = 493402498388721670
-	        	var test = 201043573162901504
-	        	if (member.id == target) {
-	        		member.voice.setMute(true)
-	        		message.channel.send(`Muted ${member.nickname}`)
-	        	}
-        	})
-        }
-        */
-        
-	    else{
-	    	message.channel.send("https://gamerdvr.com/gamer/iphone2356/video/125379340")
-	    	
-	    }
-	    
-	    
-	   //message.channel.send("https://gamerdvr.com/gamer/iphone2356/video/125379340")
-
-    }
-	
+	}
 }

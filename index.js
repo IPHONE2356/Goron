@@ -26,7 +26,7 @@ for (const file of commandFiles) {
 //Event listener for when the client is ready
 client.once('ready', () => {
 	console.log(`Bot is online, logged in as ${client.user.tag}`);
-	client.user.setActivity(config.status, { type: 'WATCHING' });
+	client.user.setActivity(`${commandFiles.length} Command modules`, { type: 'WATCHING' });
 
 });
 /*

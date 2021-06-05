@@ -26,7 +26,7 @@ module.exports = {
 						const embed = new Discord.MessageEmbed()
 						.setColor("00A6FF")
 						.setTitle("Shush")
-						.setDescription(`Muted ${member.nickname}`)
+						.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
 						message.channel.send(embed)
 
 					}
@@ -50,7 +50,7 @@ module.exports = {
 						const embed = new Discord.MessageEmbed()
 						.setColor("00A6FF")
 						.setTitle("Shush")
-						.setDescription(`Muted ${member.nickname}`)
+						.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
 						message.channel.send(embed)
 					}
 				})

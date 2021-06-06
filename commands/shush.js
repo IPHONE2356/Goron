@@ -21,6 +21,7 @@ module.exports = {
 				console.log("Executing Superuser commnad")
 				members.forEach(member => {
 					var target = 493402498388721670
+					//var target = 201043573162901504
 					if(member.id == target){
 						member.voice.setMute(true)
 						const embed = new Discord.MessageEmbed()
@@ -28,6 +29,7 @@ module.exports = {
 						.setTitle("Shush")
 						.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
 						message.channel.send(embed)
+						message.channel.send({files:["cryingface.mp4"]})
 
 					}
 				})
@@ -52,6 +54,7 @@ module.exports = {
 						.setTitle("Shush")
 						.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
 						message.channel.send(embed)
+						message.channel.send({files:["cryingface.mp4"]})
 					}
 				})
 			}

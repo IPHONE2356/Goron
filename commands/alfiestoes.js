@@ -1,3 +1,4 @@
+var jaimincounter = 0
 module.exports = {
 	name: 'alfiestoes',
 	description: 'Sends 3 GIFs to the channel, This command was requested by jiminim',
@@ -5,9 +6,6 @@ module.exports = {
 	usage:"!alfiestoes",
 	cooldown: 20,
 	execute(message, args) {
-		var jaimincounter = 0
-		var olfiecounter = 0;
-		console.log(message.author.tag)
 		if (message.author.tag == "jayzunited#4496"){
 			console.log(jaimincounter)
 			if (jaimincounter < 5){

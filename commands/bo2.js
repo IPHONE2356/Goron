@@ -1,6 +1,6 @@
 module.exports = {
-	name:"broadcast",
-	description:"Broadcasts a sound file to all voice channels that the bot is in.",
+	name:"bo2",
+	description:"Plays max's song about bo2.",
 	guildOnly : true,
 	async execute(message,args){
 
@@ -15,7 +15,7 @@ module.exports = {
 		console.log("Start dispatch")
 		dispatcher.on('finish', () => {
 			console.log('Playing Max song.mp3');
-			message.channel.send("Max song.mp3 has stopped playing, Disconnecting")
+			message.channel.send("Max song.mp3 has stopped playing, Disconnecting\n RIP Bricka")
 			connection.disconnect()
 			
 		});

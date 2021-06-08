@@ -42,16 +42,21 @@ module.exports = {
 			}
 		}
 		else if (args[0] == "acapella"){
-			members.forEach(member => {
-				var target = 460455100092252170
-				if(member.id == target){
-					member.voice.setMute(false)
-					const embed = new Discord.MessageEmbed()
-					.setColor("00A6FF")
-					.setTitle("Comehere")
-					.setDescription(`Unmuted ${member.nickname}:microphone2:`)
-				}
-			})
+			var target = 460455100092252170
+			if(message.author != target){
+				members.forEach(member => {
+					if(member.id == target){
+						member.voice.setMute(false)
+						const embed = new Discord.MessageEmbed()
+						.setColor("00A6FF")
+						.setTitle("Comehere")
+						.setDescription(`Unmuted ${member.nickname}:microphone2:`)
+					}
+				})
+			}
+			else if(message.author == target{
+				message.channel.send("Harrison harrison harrison harrison harrison harrison")
+			}
 		}
 		else{
 			if(superauth == true){

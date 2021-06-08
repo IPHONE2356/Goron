@@ -12,9 +12,9 @@ module.exports = {
 				superauth = true
 			}
 		})
+		const channel = message.channel
+		const members = channel.members
 		if(superauth == true){
-			const channel = message.channel
-			const members = channel.members
 			members.forEach(member => {
 				if(member.id == 330411095959273482){
 					member.voice.setMute(false)
@@ -25,6 +25,14 @@ module.exports = {
 					message.channel.send(embed)
 				}
 			})
+		}
+		else if(superauth == false){
+			const embed = new Discord.MessageEmbed()
+			.setColor("FF0000")
+			.setTitle("Shush")
+			.setDescription("You do not have access to this command")
+			message.channel.send(embed)
+
 		}
 	}
 }

@@ -54,7 +54,7 @@ module.exports = {
 					}
 				})
 			}
-			else if(message.author == target{
+			else if(message.author == target){
 				message.channel.send("Harrison harrison harrison harrison harrison harrison")
 			}
 		}

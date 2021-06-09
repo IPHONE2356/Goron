@@ -20,7 +20,7 @@ module.exports = {
 					member.voice.setMute(true)
 					const embed = new Discord.MessageEmbed()
 					.setColor("00A6FF")
-					.setTitle("Shush")
+					.setTitle("Knees")
 					.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
 					message.channel.send(embed)
 				}
@@ -29,7 +29,7 @@ module.exports = {
 		else if(superauth == false){
 			const embed = new Discord.MessageEmbed()
 			.setColor("FF0000")
-			.setTitle("Shush")
+			.setTitle("Knees")
 			.setDescription("You do not have access to this command")
 			message.channel.send(embed)
 

@@ -1,6 +1,6 @@
 module.exports = {
 	name:"yeahyeahyeahhhhhh",
-	description:"yeah yeah yeahhhhhh",
+	description:"Plays My singing monsters Songs. THe parameters are: ``!yeahyeahyeahhhhhh`` for the Plant Island song, ``!yeahyeahyeahhhhhh shugabush`` For the shugabush sound and ``!yeahyeahyeahhhhhh shugaisland`` for the whole Shugabush Island song",
 	aliases:["bom","do","msm"],
 	async execute(message,args){
 		if(!args.length){

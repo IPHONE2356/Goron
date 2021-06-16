@@ -5,7 +5,7 @@ module.exports = {
     function randomint(max){
 				return Math.floor(Math.random() * Math.floor(max))
 		}
-		var picker = randomint(17)
+		var picker = randomint(54)
     console.log(picker)
     if(picker == 0){
       picker = 1

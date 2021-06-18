@@ -137,6 +137,7 @@ client.on('message', async message => {
 	//This is where the client tried to execute the called command, if there is an error it returns the error in the message channel
 	try {
 		command.execute(message, args);
+		client.user.setActivity(`${commandFiles.length} Command modules`, { type: 'WATCHING' });
 	}
 	catch (error) {
 		console.error(error);

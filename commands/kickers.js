@@ -15,7 +15,8 @@ module.exports = {
 		message.channel.send("https://www.wikihow.com/Brush-Your-Teeth")
 		}
 		else{
-			message.channel.send(`You do not have access to this command ${message.author}`)
+			message.channel.send({files : ["Toothbrush.jpg","Toothpaste.jpg","Gum.jpg","Mouthwash.png"]})
+			message.channel.send("https://www.wikihow.com/Brush-Your-Teeth")
 		}
 	}
 }

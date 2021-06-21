@@ -10,7 +10,15 @@ module.exports = {
     if(picker == 0){
       picker = 1
     }
+    if (!args.length){
     message.channel.send({files:[`morph (${picker}).png`]})
+    }
+    else if (args[0] == "list"){
+      message.channel.send("https://imgur.com/a/v9GKKGm")
+    }
+    else{
+      message.channel.send({files:[`morph (${picker}).png`]})
+    }
 
   }
 }

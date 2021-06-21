@@ -18,6 +18,6 @@ module.exports = {
 		message.channel.send({files : ["harrysfeet.png","alfiesfeet.jpg"]})
 		}
 		*/
-		message.channel.send({files:["alfiesfeet.jpg","harrysfeet.jpg","harrysfeet2.jpg"]})
+		message.channel.send({files:["alfiesfeet.jpg","harrysfeet.png","harrysfeet2.JPG"]})
 	}
 }

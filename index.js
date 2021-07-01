@@ -73,6 +73,16 @@ client.on('message', async message => {
 			console.log(connection);
 		}
 	}
+	if(message.content == "!logout"){
+		if(message.author.tag == "Banter Gaming#1624"){
+			message.channel.send("Goodbye :wave:")
+			client.destroy()
+		}
+		else{
+			message.channel.send("https://tenor.com/view/suli-check-gif-20096728")
+		}
+		
+	}
 	/*if(message.content == "!beans"){
 		// Create a dispatcher
 		const connection = await message.member.voice.channel.join()

@@ -15,6 +15,7 @@ module.exports = {
 		})
 		const channel = message.channel
 		const members = channel.members
+		//Deafult function which mutes Alfie
 		if(!args.length){
 			console.log("No arguments provided.")
 			if(superauth == true){
@@ -34,6 +35,7 @@ module.exports = {
 					}
 				})
 			}
+		//Executes when user is denied access
 			else if (superauth == false){
 				console.log("User tried to call command but does not have access to it.")
 				const embed = new Discord.MessageEmbed()
@@ -43,10 +45,12 @@ module.exports = {
 				message.channel.send(embed)
 			}
 		}
+
 		else{
 			if(superauth == true){
 				members.forEach(member => {
-					var target = args[0]
+					var input = args[0]
+					var target = input.slice(3,-1)
 					if(member.id == target){
 						member.voice.setMute(true)
 						const embed = new Discord.MessageEmbed()

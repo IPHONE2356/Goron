@@ -61,7 +61,8 @@ module.exports = {
 		else{
 			if(superauth == true){
 				members.forEach(member => {
-					var target = args[0]
+					var input = args[0]
+					var target = input.slice(3,-1)
 					if(member.id == target){
 						member.voice.setMute(false)
 						const embed = new Discord.MessageEmbed()

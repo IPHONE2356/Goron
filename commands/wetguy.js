@@ -5,7 +5,8 @@ module.exports = {
 	guildOnly : true,
 	execute(message,args){
 		if(message.author.tag == "Banter Gaming#1624"){
-			targetid = args[0]
+			var input = args[0]
+			var targetid = input.slice(3,-1)
 			const channel = message.channel
 			const members = channel.members
 			members.forEach(member => {

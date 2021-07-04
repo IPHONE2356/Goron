@@ -9,7 +9,8 @@ module.exports = {
 		//const guild = <Guild>;
 		if(message.author.tag == "Banter Gaming#1624"){
 			message.channel.send("User authorized. :white_check_mark:")
-			targetid = args[0]
+			var input = args[0]
+			var targetid = input.slice(3,-1)
 			//targetrole = args[1]
 			const channel = message.channel
 			const members = channel.members
@@ -53,6 +54,9 @@ module.exports = {
 					]);
 					*/
 					//channel.updateOverwrite(channel.guild.roles.shush, { "SEND_MESSAGES": false })
+				}
+				else{
+					message.channel.send("Warning :x:, Target not found \n The target user must be connected to a voice channel.")
 				}
 			})
 		}

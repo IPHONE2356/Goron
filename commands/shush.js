@@ -5,7 +5,8 @@ module.exports = {
 		const Discord = require('discord.js');
 		var superauth = false
 		// 201043573162901504
-		var superuser = ["201043573162901504","330411095959273482"]
+		//               Banter Gaming      		JayzUnited       Shush  			JustNotVeryGood
+		var superuser = ["201043573162901504","330411095959273482","341957074650923008","269179454935400448"]
 		var author = message.author.id
 		superuser.forEach(selectedSu => {
 			if(selectedSu == author){
@@ -45,22 +46,39 @@ module.exports = {
 				message.channel.send(embed)
 			}
 		}
-
+		//Targeted shush
 		else{
 			if(superauth == true){
-				members.forEach(member => {
-					var input = args[0]
-					var target = input.slice(3,-1)
-					if(member.id == target){
-						member.voice.setMute(true)
-						const embed = new Discord.MessageEmbed()
-						.setColor("00A6FF")
-						.setTitle("Shush")
-						.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
-						message.channel.send(embed)
-						message.channel.send({files:["cryingface.mp4"]})
-					}
-				})
+				var input = args[0]
+				var target = input.slice(3,-1)
+				if(message.author.id != superuser[0] && target == superuser[0]){
+					message.channel.send("You are not smart")
+					imposter = message.author.id
+					members.forEach(member => {
+						if(member.id == imposter){
+							member.voice.setMute(true)
+							const embed = new Discord.MessageEmbed()
+							.setColor("00A6FF")
+							.setTitle("Shush")
+							.setDescription(`Muted ${member.nickname} :x: :microphone2: \n Because they thought they were smart`)
+							message.channel.send(embed)
+							message.channel.send({files:["cryingface.mp4"]})
+						}
+					})
+				}
+				else{
+					members.forEach(member => {
+						if(member.id == target){
+							member.voice.setMute(true)
+							const embed = new Discord.MessageEmbed()
+							.setColor("00A6FF")
+							.setTitle("Shush")
+							.setDescription(`Muted ${member.nickname} :x: :microphone2:`)
+							message.channel.send(embed)
+							message.channel.send({files:["cryingface.mp4"]})
+						}
+					})
+				}
 			}
 			else if(superauth == false){
 				const embed = new Discord.MessageEmbed()

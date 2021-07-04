@@ -5,7 +5,8 @@ module.exports = {
 		const Discord = require('discord.js');
 		var superauth = false
 		// 201043573162901504
-		var superuser = [201043573162901504,330411095959273482]
+		//               Banter Gaming      JayzUnited         JustNotVeryGood
+		var superuser = [201043573162901504,330411095959273482,269179454935400448]
 		var author = message.author.id
 		superuser.forEach(selectedSu => {
 			if(selectedSu == author){

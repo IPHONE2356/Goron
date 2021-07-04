@@ -4,7 +4,7 @@ module.exports = {
 	description: 'Sends 3 GIFs to the channel, This command was requested by jiminim',
 	aliases : ["alfie","toes"],
 	usage:"!alfiestoes",
-	cooldown: 20,
+	//cooldown: 20,
 	execute(message, args) {
 		if (message.author.tag == "jayzunited#4496"){
 			console.log(jaimincounter)

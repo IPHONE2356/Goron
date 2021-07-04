@@ -55,6 +55,9 @@ client.on('message', async message => {
 	if(message.content == "https://tenor.com/view/meat-slap-that-meat-salt-bae-gif-7897765"){
 		message.reply("I understand.")
 	}
+	if(message.content == "https://tenor.com/view/suli-check-gif-20096728"){
+		message.channel.bulkDelete(1)
+	}
 	if(message.content == "nonceLoadedCommands"){
 		message.channel.send(commandFiles.length + ' Command modules loaded');
 	}

@@ -5,7 +5,7 @@ module.exports = {
 		const Discord = require('discord.js');
 		var superauth = false
 		// 201043573162901504
-		//               Banter Gaming      JayzUnited         JustNotVeryGood
+		//               Banter Gaming      JayzUnited         JustNotVeryGood   
 		var superuser = [201043573162901504,330411095959273482,269179454935400448]
 		var author = message.author.id
 		superuser.forEach(selectedSu => {
@@ -19,6 +19,10 @@ module.exports = {
 		if(!args.length){
 			console.log("No arguments provided.")
 			if(superauth == true){
+				if(message.author.id == 493402498388721670){
+					message.channel.send({files:["cryingface.mp4"]})
+				}
+				else{
 				console.log("Executing Superuser commnad")
 				members.forEach(member => {
 					var target = 493402498388721670
@@ -32,6 +36,7 @@ module.exports = {
 
 					}
 				})
+				}
 			}
 			else if (superauth == false){
 				console.log("User tried to call command but does not have access to it.")
@@ -61,18 +66,23 @@ module.exports = {
 		}
 		else{
 			if(superauth == true){
-				members.forEach(member => {
-					var input = args[0]
-					var target = input.slice(3,-1)
-					if(member.id == target){
-						member.voice.setMute(false)
-						const embed = new Discord.MessageEmbed()
-						.setColor("00A6FF")
-						.setTitle("Comehere")
-						.setDescription(`Unmuted ${member.nickname} :microphone2:`)
-						message.channel.send(embed)
-					}
-				})
+				var input = args[0]
+				var target = input.slice(3,-1)
+			 	if(message.author.id != superuser[0] && message.author.id == target){
+			 		message.channel.send({files:["cryingface.mp4"]})
+			 	}
+			 	else{
+					members.forEach(member => {
+						if(member.id == target){
+							member.voice.setMute(false)
+							const embed = new Discord.MessageEmbed()
+							.setColor("00A6FF")
+							.setTitle("Comehere")
+							.setDescription(`Unmuted ${member.nickname} :microphone2:`)
+							message.channel.send(embed)
+						}
+					})
+				}
 			}
 			else if(superauth == false){
 				const embed = new Discord.MessageEmbed()

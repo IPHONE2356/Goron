@@ -55,9 +55,6 @@ module.exports = {
 					*/
 					//channel.updateOverwrite(channel.guild.roles.shush, { "SEND_MESSAGES": false })
 				}
-				else{
-					message.channel.send("Warning :x:, Target not found \n The target user must be connected to a voice channel.")
-				}
 			})
 		}
 		else{

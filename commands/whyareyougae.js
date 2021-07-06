@@ -2,7 +2,7 @@ module.exports = {
 	name:"whyareyougae",
 	description:"Why are you gay? Who says im gay? You are gay, You are transgenda",
 	aliases:["whyareyougay","pepejulianonzima","pastasempa"],
-	execute(message,args){
+	async execute(message,args){
 		var connection = await message.member.voice.channel.join()
 	
 		const dispatcher = connection.play('whyareyougae.mp3', {volume: 1.5});

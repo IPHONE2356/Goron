@@ -13,12 +13,17 @@ module.exports = {
 			members.forEach(member => {
 				if(member.id == target){
 					member.voice.setMute(true)
+					const embed = new Discord.MessageEmbed()
+					.setTitle("Acapella")
+					.setColor("AC570B")
+					.setDescription(`Muted ${member.nickname}`)
+					messaage.channel.send(embed)
 				}
 				if(message.author.id == target){
 					console.log("Suicide.")
 				}
 			})
 		}
-		message.channel.send("https://tenor.com/view/suli-check-gif-20096728")
+		//message.channel.send("https://tenor.com/view/suli-check-gif-20096728")
 	}
 }

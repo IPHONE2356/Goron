@@ -63,6 +63,7 @@ module.exports = {
 						.setColor("00A6FF")
 						.setTitle("Comehere")
 						.setDescription(`Unmuted ${member.nickname}:microphone2:`)
+						message.channel.send(embed)
 					}
 				})
 			}

@@ -20,6 +20,6 @@ module.exports = {
 		});
 
 		// Always remember to handle errors appropriately!
-		dispatcher.on('error', console.error);
+		dispatcher.on('error', message.channel.send(error));
 	}
 }

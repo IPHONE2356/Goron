@@ -8,6 +8,7 @@ module.exports = {
 		var counter = parseInt(counter)
 		console.log(`Counter when file is executed: ${counter}`)
 		if(counter < 3){
+			console.log("Counter is under 3, Executing")
 			var superauth = false
 			// 201043573162901504
 			//               Banter Gaming      		JayzUnited       Shush  			JustNotVeryGood	

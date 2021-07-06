@@ -3,6 +3,7 @@ module.exports = {
 	description:"Server mutes dylan, To unmute do !comehere acapella. This can be accessed by anyone",
 	usage:"!acapella",
 	execute(message,args){
+		const Discord = require('discord.js')
 		if(message.author.id == 508345920639729675){
 			message.channel.send("https://tenor.com/view/suli-check-gif-20096728")
 		}

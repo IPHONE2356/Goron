@@ -1,10 +1,13 @@
-var counter = 0 
 module.exports = {
 	name:"shush",
 	description:"Server mutes alfie, Some people can server mute others using their ID",
 	execute(message,args){
+		const Discord = require('discord.js');
+		var fs = require('fs')
+		var counter = fs.readFileSync('shushlimit.txt')
+		var counter = parseInt(counter)
+		console.log(`Counter when file is executed: ${counter}`)
 		if(counter < 3){
-			const Discord = require('discord.js');
 			var superauth = false
 			// 201043573162901504
 			//               Banter Gaming      		JayzUnited       Shush  			JustNotVeryGood	
@@ -39,6 +42,10 @@ module.exports = {
 							message.channel.send(embed)
 							message.channel.send({files:["cryingface.mp4"]})
 							counter = counter + 1
+							console.log(counter)
+							fs.writeFile('shushlimit.txt',counter.toString(), (err) => {
+							if (err) throw err;
+							})
 
 						}
 					})
@@ -73,6 +80,10 @@ module.exports = {
 								message.channel.send(embed)
 								message.channel.send({files:["cryingface.mp4"]})
 								counter = counter + 1
+								console.log(counter)
+								fs.writeFile('shushlimit.txt',counter.toString(), (err) => {
+								if (err) throw err;
+								})
 							}
 						})
 					}
@@ -88,6 +99,10 @@ module.exports = {
 								message.channel.send(embed)
 								message.channel.send({files:["cryingface.mp4"]})
 								counter = counter + 1
+								console.log(counter)
+								fs.writeFile('shushlimit.txt',counter.toString(), (err) => {
+								if (err) throw err;
+								})
 							}
 						})
 					}

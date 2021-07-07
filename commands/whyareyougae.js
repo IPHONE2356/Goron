@@ -14,7 +14,7 @@ module.exports = {
 		console.log("Start dispatch")
 		dispatcher.on('finish', () => {
 			console.log('Playing whyareyougae.mp3');
-			message.channel.send("whyareyougae.mp3 has stopped playing, Disconnecting\n RIP Bricka")
+			message.channel.send("whyareyougae.mp3 has stopped playing, Disconnecting.")
 			connection.disconnect()
 			
 		});

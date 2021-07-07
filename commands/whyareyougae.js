@@ -5,7 +5,7 @@ module.exports = {
 	async execute(message,args){
 		var connection = await message.member.voice.channel.join()
 	
-		const dispatcher = connection.play('whyareyougae.mp3', {volume: 1.5});
+		const dispatcher = connection.play('whyareyougae.mp3', {volume: 0.75});
 
 		dispatcher.on('start', () => {
 			console.log('Broadcasting whyareyougae.mp3');

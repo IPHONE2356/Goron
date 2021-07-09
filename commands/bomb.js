@@ -17,7 +17,7 @@ module.exports = {
 				return message.reply("That is not a valid number")
 			}
 			else if (amount > 100) {
-				return message.reply("The maximum amount of messages you can bulk delete is 20")
+				return message.reply("The maximum amount of messages you can bulk delete is 99")
 			}
 			else {
 			message.channel.bulkDelete(amount,true).catch(err => {

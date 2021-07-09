@@ -56,7 +56,7 @@ client.on('message', async message => {
 		message.reply("I understand.")
 	}
 	if(message.content == "https://tenor.com/view/suli-check-gif-20096728"){
-		message.channel.bulkDelete(1)
+		message.delete()
 	}
 	if(message.content == "nonceLoadedCommands"){
 		message.channel.send(commandFiles.length + ' Command modules loaded');

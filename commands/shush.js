@@ -47,6 +47,7 @@ module.exports = {
 							fs.writeFile('shushlimit.txt',counter.toString(), (err) => {
 							if (err) throw err;
 							})
+							message.channel.send(`${counter}/3 times used`)
 
 						}
 					})
@@ -85,6 +86,7 @@ module.exports = {
 								fs.writeFile('shushlimit.txt',counter.toString(), (err) => {
 								if (err) throw err;
 								})
+								message.channel.send(`${counter}/3 times used`)
 							}
 						})
 					}
@@ -104,6 +106,7 @@ module.exports = {
 								fs.writeFile('shushlimit.txt',counter.toString(), (err) => {
 								if (err) throw err;
 								})
+								message.channel.send(`${counter}/3 times used`)
 							}
 						})
 					}

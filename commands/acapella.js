@@ -9,7 +9,7 @@ module.exports = {
 		}
 		else{
 			const channel = message.channel
-			const members = channel.members
+			const members = channel.member
 			var target = 460455100092252170 
 			members.forEach(member => {
 				if(member.id == target){
@@ -18,7 +18,7 @@ module.exports = {
 					.setTitle("Acapella")
 					.setColor("AC570B")
 					.setDescription(`Muted ${member.nickname}`)
-					messaage.channel.send(embed)
+					message.channel.send(embed)
 				}
 				if(message.author.id == target){
 					console.log("Suicide.")

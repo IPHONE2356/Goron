@@ -52,14 +52,12 @@ client.on('guildMemberRemove', member => {
 
 
 client.on('message', async message => {
-	if(message.content == "https://tenor.com/view/meat-slap-that-meat-salt-bae-gif-7897765"){
+	/*if(message.content == "https://tenor.com/view/meat-slap-that-meat-salt-bae-gif-7897765"){
 		message.reply("I understand.")
 	}
+	*/
 	if(message.content == "https://tenor.com/view/suli-check-gif-20096728"){
 		message.delete()
-	}
-	if(message.content == "nonceLoadedCommands"){
-		message.channel.send(commandFiles.length + ' Command modules loaded');
 	}
 	if(message.content == '<@395967820883558400>') {
 		message.channel.send('<@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400> <@395967820883558400>');

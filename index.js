@@ -1,4 +1,3 @@
-//Jaimins knees are dry
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -32,7 +31,7 @@ client.once('ready', () => {
 /*
 client.on('guildMemberRemove', member => {
 
-	//0onst actualstring = message.guild.systemChannel.toString()
+	//const actualstring = message.guild.systemChannel.toString()
 	const channel = member.guild.channels.cache.find(ch => ch.id == member.guild.id)
 	//console.log(actualstring)
 	//client.channels.cache.get(actualstring).send(`User has left`)

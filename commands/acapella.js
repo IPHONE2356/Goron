@@ -14,6 +14,7 @@ module.exports = {
 			members.forEach(member => {
 				if(member.id == target){
 					member.voice.setMute(true)
+					member.setNickname("Dillon")
 					const embed = new Discord.MessageEmbed()
 					.setTitle("Acapella")
 					.setColor("AC570B")

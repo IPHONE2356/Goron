@@ -1,6 +1,7 @@
 module.exports = {
 	name:"deafen",
-	description:"oof",
+	description: "Deafens the specified user using theur mention tag - Only a number of people have access to this command",
+	usage:"@targetsmentiontag",
 	execute(message,args){
 		const Discord = require('discord.js');
 		var fs = require('fs')

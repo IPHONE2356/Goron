@@ -1,6 +1,6 @@
 module.exports = {
 	name:"disconnect",
-	description:"Disconnects a user by ID",
+	description:"Disconnects a user by their mention tag"
 	usage:"[user id]",
 	aliases:["dc","getout"],
 	execute(message,args){

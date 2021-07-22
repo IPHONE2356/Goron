@@ -1,6 +1,6 @@
 module.exports = {
 	name:"config",
-	description:"config",
+	description:"Sends elements of a config file",
 	execute(message,args){
 		const config = require('../config.json')
 

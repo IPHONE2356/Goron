@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'bomb',
-	description: 'Bulk deletes messages in a channel. Correct usage: ``!bomb [amount]``',
+	description: 'Bulk deletes messages in a channel'.,
 	args: true,
 	guildOnly:true,
 	aliases: ["boom","osama","shamima","purge"],
